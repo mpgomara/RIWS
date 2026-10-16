@@ -7,6 +7,10 @@ import scrapy
 
 
 class RecolectorItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    id = scrapy.Field()
+    titulo = scrapy.Field()
+    texto = scrapy.Field()
+    autor = scrapy.Field()
+    categorias = scrapy.Field()
+    url = scrapy.Field()
+    fuente = scrapy.Field()
