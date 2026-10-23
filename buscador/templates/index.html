@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ComponentSearch | Buscador de componentes</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>ComponentSearch</h1>
+        <p>Encuentra componentes informáticos de distintas tiendas</p>
+    </header>
+
+    <main>
+        <section class="busqueda">
+            <h2>Buscar componentes</h2>
+
+            <form id="formulario-busqueda">
+                <input
+                    type="search"
+                    id="consulta"
+                    placeholder="Ej: Arctic, SSD, RTX..."
+                >
+
+                <select id="categoria">
+                    <option value="">Todas las categorías</option>
+                </select>
+
+                <input
+                    type="number"
+                    id="precio-min"
+                    placeholder="Precio mínimo (€)"
+                    min="0"
+                    step="0.01"
+                >
+
+                <input
+                    type="number"
+                    id="precio-max"
+                    placeholder="Precio máximo (€)"
+                    min="0"
+                    step="0.01"
+                >
+
+                <button type="submit">Buscar</button>
+            </form>
+        </section>
+
+        <section class="resultados">
+            <h2>Resultados</h2>
+
+            <p id="total-resultados">
+                Realiza una búsqueda para comenzar.
+            </p>
+
+            <div id="lista-productos"></div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='buscador.js') }}"></script>
+</body>
+</html>
